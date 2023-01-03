@@ -11,4 +11,4 @@ A Spring Boot application to track users restaurant experiences.
 
 ## License
 
-[test](LICENSE)
+[MIT](LICENSE.txt)
