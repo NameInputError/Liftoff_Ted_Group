@@ -23,16 +23,16 @@ public class Restaurant extends AbstractEntity{
 
     private String review;
 
-    private Categories type;
+    private Restaurants type;
 
 
     public Restaurant(){}
 
     public Restaurant(String restaurantName, String restaurantLocation,
-                      ArrayList<String> categories, Float stars, String review, Categories type) {
+                      ArrayList<String> categories, Float stars, String review, Restaurants type) {
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
-        this.categories = categories;
+        this.type = type;
         this.stars = stars;
         this.review = review;
         this.type = type;
@@ -78,11 +78,11 @@ public class Restaurant extends AbstractEntity{
         this.review = review;
     }
 
-    public Categories getType() {
+    public Restaurants getType() {
         return type;
     }
 
-    public void setType(Categories type) {
+    public void setType(Restaurants type) {
         this.type = type;
     }
 
