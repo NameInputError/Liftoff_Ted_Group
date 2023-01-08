@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public class User {
+public class User extends AbstractEntity{
     @NotBlank
     @NotNull
     @Size(min = 5, max = 15)
@@ -28,6 +28,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
     public String getUsername() {
         return username;
     }
@@ -52,4 +53,9 @@ public class User {
         this.password = password;
     }
 
+
+
+    public boolean isMatchingPassword(String password) {
+        return false;
+    }
 }

@@ -1,4 +1,4 @@
-package org.launchcode.trackmyeats.models.data.dto;
+package org.launchcode.trackmyeats.models.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

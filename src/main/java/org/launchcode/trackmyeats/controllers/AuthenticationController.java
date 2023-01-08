@@ -1,9 +1,12 @@
 package org.launchcode.trackmyeats.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.launchcode.trackmyeats.models.User;
 import org.launchcode.trackmyeats.models.data.UserRepository;
-import org.launchcode.trackmyeats.models.data.dto.LoginFormDTO;
-import org.launchcode.trackmyeats.models.data.dto.RegisterFormDTO;
+import org.launchcode.trackmyeats.models.dto.LoginFormDTO;
+import org.launchcode.trackmyeats.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -59,7 +59,7 @@ public class AuthenticationController {
             return "register";
         }
 
-        User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword());
+        User newUser = new User();
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
