@@ -1,4 +1,4 @@
-package org.launchcode.trackmyeats.models.data.dto;
+package org.launchcode.trackmyeats.models.dto;
 
 public class RegisterFormDTO extends LoginFormDTO {
 

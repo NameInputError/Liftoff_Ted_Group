@@ -8,13 +8,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+
 @Entity
-public class User {
-
-    @Id
-    @GeneratedValue
-    private int id;
-
+public class User extends AbstractEntity {
 
     @NotBlank
     @NotNull
@@ -37,6 +33,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
     public String getUsername() {
         return username;
     }
@@ -61,4 +58,9 @@ public class User {
         this.password = password;
     }
 
+
+
+    public boolean isMatchingPassword(String password) {
+        return false;
+    }
 }

@@ -24,6 +24,7 @@ dependencies {
 		//exclude group: 'org.junit.vintage',
 				//module: 'junit-vintage-engine'
 	//}
+
 	implementation 'org.springframework.security:spring-security-crypto'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
