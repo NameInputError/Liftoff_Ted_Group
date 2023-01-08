@@ -4,37 +4,38 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
-public class Restaurant {
+public class Restaurant extends AbstractEntity{
 
-    @Id
-    @GeneratedValue
-    private int id;
     private String restaurantName;
 
     private String restaurantLocation;
 
     private ArrayList<String> categories = new ArrayList<>();
 
-    private Date date;
+    private LocalDate date;
 
     private Float stars;
 
     private String review;
 
+    private Categories type;
+
+
     public Restaurant(){}
 
     public Restaurant(String restaurantName, String restaurantLocation,
-                      ArrayList<String> categories, Date date, Float stars, String review) {
+                      ArrayList<String> categories, Float stars, String review, Categories type) {
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
         this.categories = categories;
-        this.date = date;
         this.stars = stars;
         this.review = review;
+        this.type = type;
     }
 
     public String getRestaurantName() {
@@ -61,14 +62,6 @@ public class Restaurant {
         this.categories = categories;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public Float getStars() {
         return stars;
     }
@@ -83,5 +76,21 @@ public class Restaurant {
 
     public void setReview(String review) {
         this.review = review;
+    }
+
+    public Categories getType() {
+        return type;
+    }
+
+    public void setType(Categories type) {
+        this.type = type;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public LocalDate getDate() {
+        return date;
     }
 }
