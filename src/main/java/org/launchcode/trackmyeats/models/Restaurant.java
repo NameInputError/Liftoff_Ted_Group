@@ -1,10 +1,18 @@
 package org.launchcode.trackmyeats.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.util.ArrayList;
 import java.util.Date;
 
+@Entity
 public class Restaurant {
 
+    @Id
+    @GeneratedValue
+    private int id;
     private String restaurantName;
 
     private String restaurantLocation;
@@ -21,7 +29,6 @@ public class Restaurant {
 
     public Restaurant(String restaurantName, String restaurantLocation,
                       ArrayList<String> categories, Date date, Float stars, String review) {
-        this();
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
         this.categories = categories;

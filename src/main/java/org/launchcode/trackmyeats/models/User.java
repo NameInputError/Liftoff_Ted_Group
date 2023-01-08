@@ -1,11 +1,17 @@
 package org.launchcode.trackmyeats.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public class User extends AbstractEntity{
+
+@Entity
+public class User extends AbstractEntity {
+
     @NotBlank
     @NotNull
     @Size(min = 5, max = 15)
@@ -23,7 +29,6 @@ public class User extends AbstractEntity{
     public User() {}
 
     public User(String username, String email, String password) {
-        this();
         this.username = username;
         this.email = email;
         this.password = password;
