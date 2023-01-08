@@ -16,9 +16,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by Chris Bay
- */
 public class AuthenticationFilter extends WebRequestHandlerInterceptorAdapter {
 
     @Autowired
