@@ -10,11 +10,11 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
-//    User findByUsername(String username);
+   User findByUsername(String username) ;
 //
-//     void save(User newUser);
-//
-//    Optional<User> findById(Integer userId);
+    //public void save(User newUser);
+
+    Optional<User> findById(Integer userId);
 
 }
 

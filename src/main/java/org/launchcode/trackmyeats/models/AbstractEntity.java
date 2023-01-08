@@ -3,6 +3,7 @@ package org.launchcode.trackmyeats.models;
 
 
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import org.launchcode.trackmyeats.models.User;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 @MappedSuperclass
 public abstract class AbstractEntity {
 
-//    @Id
+   @Id
     @GeneratedValue
     private int id;
 
