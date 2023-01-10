@@ -24,7 +24,7 @@ public class RestaurantController {
        // Restaurant restaurant = result.get();
         //model.addAttribute("title", "My Eats: " + restaurant.getRestaurantName());
         model.addAttribute("restaurants", restaurantRepository.findAll());
-        return "index";
+        return "eats";
     }
 
     @GetMapping("add")
