@@ -35,17 +35,17 @@ public class RestaurantController {
         return "add";
     }
 
-//    @PostMapping("create")
-//    public String processCreateEventForm(@ModelAttribute @Valid Restaurant newRestaurant,
-//                                         Errors errors, Model model) {
-//        if(errors.hasErrors()) {
-//            model.addAttribute("title", "Add a Restaurant");
-//            return "eats/add";
-//        }
-//
-//        restaurantRepository.save(newRestaurant);
-//        return "redirect:";
-   // }
+    @PostMapping("add")
+    public String processAddRestaurantForm(@ModelAttribute @Valid Restaurant newRestaurant,
+                                         Errors errors, Model model) {
+        if(errors.hasErrors()) {
+            model.addAttribute("title", "Add a Restaurant");
+            return "add";
+        }
+
+        restaurantRepository.save(newRestaurant);
+        return "eats";
+    }
 
 //    @GetMapping("delete")
 //    public String displayDeleteEventForm(Model model) {
