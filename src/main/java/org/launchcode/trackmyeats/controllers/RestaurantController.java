@@ -19,12 +19,12 @@ public class RestaurantController {
     @Autowired
     private RestaurantRepository restaurantRepository;
 
-    @GetMapping("eats")
+    @GetMapping("")
     public String displayRestaurants(@RequestParam(required = false) Integer restaurantId, Model model) {
        // Restaurant restaurant = result.get();
         //model.addAttribute("title", "My Eats: " + restaurant.getRestaurantName());
         model.addAttribute("restaurants", restaurantRepository.findAll());
-        return "eats/index";
+        return "index";
     }
 
     @GetMapping("add")
@@ -32,7 +32,7 @@ public class RestaurantController {
         model.addAttribute("title", "Add a Restaurant");
         model.addAttribute(new Restaurant());
         model.addAttribute("types", Restaurants.values());
-        return "eats/add";
+        return "add";
     }
 
 //    @PostMapping("create")

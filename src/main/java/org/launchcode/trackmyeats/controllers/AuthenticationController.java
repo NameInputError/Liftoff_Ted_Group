@@ -123,7 +123,7 @@ public class AuthenticationController {
 
         setUserInSession(request.getSession(), theUser);
 
-        return "/eats";
+        return "/eats/index";
     }
 
     @GetMapping("/logout")
