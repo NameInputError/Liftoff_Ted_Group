@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+
+
+<form method="post">
+    <div class="form-group">
+        <label>Name
+            <input th:field="${restaurant.restaurantName}" class="form-control">
+        </label>
+        <p class="error" th:errors="${restaurant.restaurantName}"></p>
+    </div>
+    <div class="form-group">
+        <label>Review
+            <input th:field="${restaurant.review}" class="form-control">
+        </label>
+        <p class="error" th:errors="${restaurant.review}"></p>
+    </div>
+    <div class="form-group">
+        <label>Rating
+            <input th:field="${restaurant.stars}" class="form-control">
+        </label>
+        <p class="error" th:errors="${restaurant.stars}"></p>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-success">
+    </div>
+</form>
+
+</body>
+</html>
