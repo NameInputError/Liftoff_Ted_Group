@@ -3,28 +3,34 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 
-<header th:replace="fragments :: page-header"></header>
+<!--taking this out so that there is not an extra link for getting to register-->
+<!--<header th:replace="fragments :: page-header"></header>-->
 
 <form method="post">
     <div class="form-group">
         <label>Username
-            <input class="form-control" th:field="${registerFormDTO.username}" />
+            <input th:field="${registerFormDTO.username}" class="form-control"/>
         </label>
+        <!--this demonstrates input errors-->
         <p class="error" th:errors="${registerFormDTO.username}"></p>
     </div>
     <div class="form-group">
         <label>Password
-            <input class="form-control" th:field="${registerFormDTO.password}" type="password" />
+            <input th:field="${registerFormDTO.password}" class="form-control"/>
         </label>
+        <!--this demonstrates input errors-->
         <p class="error" th:errors="${registerFormDTO.password}"></p>
     </div>
     <div class="form-group">
         <label>Verify Password
-            <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password" />
+            <input th:field="${registerFormDTO.verifyPassword}" class="form-control"/>
         </label>
+        <p class="error" th:errors="${registerFormDTO.verifyPassword}"></p>
     </div>
 
-    <input type="submit" class="btn btn-primary" value="Register" />
+    <div class="form-group">
+    <input type="submit" value="Register" class="btn btn-primary"/>
+    </div>
 </form>
 
 </body>
