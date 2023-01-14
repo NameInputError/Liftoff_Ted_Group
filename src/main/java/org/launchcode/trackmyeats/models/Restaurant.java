@@ -3,6 +3,7 @@ package org.launchcode.trackmyeats.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,27 +16,28 @@ public class Restaurant extends AbstractEntity{
 
     private String restaurantLocation;
 
-    private ArrayList<String> categories = new ArrayList<>();
+//    private ArrayList<String> categories = new ArrayList<>();
 
     private LocalDate date;
 
     private Float stars;
 
+    @Size()
     private String review;
 
-    private Restaurants type;
+    private ArrayList<String> type;
 
 
     public Restaurant(){}
 
     public Restaurant(String restaurantName, String restaurantLocation,
-                      ArrayList<String> categories, Float stars, String review, Restaurants type) {
+                      ArrayList<String> type, Float stars, String review) {
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
         this.type = type;
         this.stars = stars;
         this.review = review;
-        this.type = type;
+
     }
 
     public String getRestaurantName() {
@@ -54,13 +56,13 @@ public class Restaurant extends AbstractEntity{
         this.restaurantLocation = restaurantLocation;
     }
 
-    public ArrayList<String> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(ArrayList<String> categories) {
-        this.categories = categories;
-    }
+//    public ArrayList<String> getCategories() {
+//        return categories;
+//    }
+//
+//    public void setCategories(ArrayList<String> categories) {
+//        this.categories = categories;
+//    }
 
     public Float getStars() {
         return stars;
@@ -78,13 +80,20 @@ public class Restaurant extends AbstractEntity{
         this.review = review;
     }
 
-    public Restaurants getType() {
+    public ArrayList<String> getType() {
         return type;
     }
 
-    public void setType(Restaurants type) {
+    public void setType(ArrayList<String> type) {
         this.type = type;
     }
+//    public Restaurants getType() {
+//        return type;
+//    }
+//
+//    public void setType(Restaurants type) {
+//        this.type = type;
+//    }
 
     public void setDate(LocalDate date) {
         this.date = date;

@@ -1,7 +1,7 @@
 package org.launchcode.trackmyeats.controllers;
 
 import jakarta.validation.Valid;
-import org.launchcode.trackmyeats.models.Restaurants;
+//import org.launchcode.trackmyeats.models.Restaurants;
 import org.launchcode.trackmyeats.models.Restaurant;
 import org.launchcode.trackmyeats.models.data.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class RestaurantController {
     public String displayAddRestaurantForm(Model model) {
         model.addAttribute("title", "Add a Restaurant");
         model.addAttribute(new Restaurant());
-        model.addAttribute("types", Restaurants.values());
+//        model.addAttribute("types", );
         return "add";
     }
 
@@ -42,9 +42,9 @@ public class RestaurantController {
             model.addAttribute("title", "Add a Restaurant");
             return "add";
         }
-
+        model.addAttribute(String.valueOf(new Restaurant()), newRestaurant);
         restaurantRepository.save(newRestaurant);
-        return "eats";
+        return "redirect:/eats";
     }
 
 //    @GetMapping("delete")

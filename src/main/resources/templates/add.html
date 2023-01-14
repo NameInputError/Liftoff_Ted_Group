@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">
+
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <title> Bootstrap Star Rating </title>
+    <!--  Add Bootstrap cdn  -->
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  Add bootstrap icon Library  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color : yellow;
+            font-size : 20px;
+        }
+        .unchecked {
+            font-size : 20px;
+        }
+    </style>
+
+</head>
 <body class="container">
 
 
 
 <form method="post">
+    <header th:replace="fragments :: page-header"></header>
+    <h2> What Restaurant Would you like to add? </h2>
     <div class="form-group">
         <label>Name
             <input th:field="${restaurant.restaurantName}" class="form-control">
@@ -23,7 +46,15 @@
             <input th:field="${restaurant.stars}" class="form-control">
         </label>
         <p class="error" th:errors="${restaurant.stars}"></p>
-    </div>
+<!--    <h1 align = "center">Bootstrap star rating example</h1>-->
+<!--    &lt;!&ndash; To display checked star rating icons &ndash;&gt;-->
+<!--    <span class = "fa fa-star checked"></span>-->
+<!--    <span class = "fa fa-star checked"></span>-->
+<!--    <span class = "fa fa-star checked"></span>-->
+<!--    <span class = "fa fa-star checked"></span>-->
+<!--    &lt;!&ndash; To display unchecked star rating icons &ndash;&gt;-->
+<!--    <span class = "fa fa-star unchecked"></span>-->
+        </div>
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-success">
     </div>

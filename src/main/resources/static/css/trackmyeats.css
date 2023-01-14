@@ -1,0 +1,15 @@
+body {
+    background-color: white;
+}
+
+h2 {
+    text-align: center;
+    color: orchid;
+}
+
+.glyphicon-star:before {
+  content: "\e006";
+}
+.glyphicon-star-empty:before {
+  content: "\e007";
+}
