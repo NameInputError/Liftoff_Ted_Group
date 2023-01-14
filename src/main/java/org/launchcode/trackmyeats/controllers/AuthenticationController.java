@@ -132,5 +132,25 @@ public class AuthenticationController {
         return "redirect:/login";
     }
 
+    //info for deleting this code pasted from coding events , needs updating:
+//    @GetMapping("delete")
+//    public String displayDeleteEventForm(Model model) {
+//        model.addAttribute("title", "Delete Events");
+//        model.addAttribute("events", EventData.getAll());
+//        return "events/delete";
+//    }
+//
+//    @PostMapping("delete")
+//    public String processDeleteEventsForm(@RequestParam(required = false) int[] eventIds) {
+//
+//        if (eventIds != null) {
+//            for (int id : eventIds) {
+//                EventData.remove(id);
+//            }
+//        }
+//
+//        return "redirect:";
+//    }
+
 }
 
