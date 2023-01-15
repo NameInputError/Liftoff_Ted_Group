@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
 <head>
     <meta charset="UTF-8">
     <title>Track My Eats</title>
@@ -7,5 +8,32 @@
 <body>
 <p>My Track My Eats Home Page</p>
 <p>This is the eats.html template</p>
+
+<div class="container body-content">
+    <h2>Restaurants</h2>
+    <ul th:each="restaurant : ${restaurants}">
+        <li>
+            <h1 th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</h1>
+<!--            <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
+        </li>
+    </ul>
+
+</div>
+
+<!--<div class="job-listing">-->
+<!--    <p th:text="${'ID: ' + job.id}"></p>-->
+<!--    <p th:text="${'Name: ' + job.name}"></p>-->
+<!--    <p th:text="${'Employer: ' + job.employer}"></p>-->
+<!--    <p th:text="${'Skill: ' + job.skill}"></p>-->
+<!--</div>-->
+
+<!--<h1 th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</h1>-->
+
+<!--<nav th:replace="fragments :: page-header"></nav>-->
+
+<!--&lt;!&ndash;    <p th:text="${'ID: ' + restaurant.restaurantId}"></p>&ndash;&gt;-->
+<!--    <p th:text="${'Name: ' + restaurant.restaurantName}"></p>-->
+
 </body>
+
 </html>
