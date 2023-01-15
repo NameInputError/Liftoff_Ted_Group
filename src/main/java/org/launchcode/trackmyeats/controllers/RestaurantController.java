@@ -42,7 +42,7 @@ public class RestaurantController {
             model.addAttribute("title", "Add a Restaurant");
             return "add";
         }
-        model.addAttribute(String.valueOf(new Restaurant()), newRestaurant);
+//        model.addAttribute(String.valueOf(new Restaurant()), newRestaurant);
         restaurantRepository.save(newRestaurant);
         return "redirect:/eats";
     }
