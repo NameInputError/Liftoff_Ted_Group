@@ -44,7 +44,7 @@ public class RestaurantController {
         }
 
         restaurantRepository.save(newRestaurant);
-        return "eats";
+        return "redirect:/eats";
     }
 
 //    @GetMapping("delete")
