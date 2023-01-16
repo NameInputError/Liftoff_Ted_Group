@@ -10,29 +10,21 @@
 <p>This is the eats.html template</p>
 
 <div class="container body-content">
-    <h2>Restaurants</h2>
+    <h1>My Restaurants</h1>
     <ul th:each="restaurant : ${restaurants}">
         <li>
-            <h1 th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</h1>
+            <p th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</p>
+            <p th:text="${'Location: ' + restaurant.restaurantLocation}"></p>
+            <p th:text="${'Review: ' + restaurant.review}"></p>
+            <p th:text="${'Stars: ' + restaurant.stars}"></p>
+            <p th:text="${'Date: ' + restaurant.date}"></p>
+
 <!--            <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
         </li>
     </ul>
 
 </div>
 
-<!--<div class="job-listing">-->
-<!--    <p th:text="${'ID: ' + job.id}"></p>-->
-<!--    <p th:text="${'Name: ' + job.name}"></p>-->
-<!--    <p th:text="${'Employer: ' + job.employer}"></p>-->
-<!--    <p th:text="${'Skill: ' + job.skill}"></p>-->
-<!--</div>-->
-
-<!--<h1 th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</h1>-->
-
-<!--<nav th:replace="fragments :: page-header"></nav>-->
-
-<!--&lt;!&ndash;    <p th:text="${'ID: ' + restaurant.restaurantId}"></p>&ndash;&gt;-->
-<!--    <p th:text="${'Name: ' + restaurant.restaurantName}"></p>-->
 
 </body>
 
