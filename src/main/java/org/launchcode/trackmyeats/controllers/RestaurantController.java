@@ -20,8 +20,8 @@ public class RestaurantController {
     private RestaurantRepository restaurantRepository;
 
     @GetMapping("")
-    public String displayRestaurants(@RequestParam(required = false) Integer restaurantId, Model model) {
-       // Restaurant restaurant = result.get();
+    public String displayRestaurants(@RequestParam(required = false) Integer restaurantId,Model model) {
+        //Restaurant restaurant = result.get();
         //model.addAttribute("title", "My Eats: " + restaurant.getRestaurantName());
         model.addAttribute("restaurants", restaurantRepository.findAll());
         return "eats";
@@ -44,7 +44,7 @@ public class RestaurantController {
         }
 
         restaurantRepository.save(newRestaurant);
-        return "eats";
+        return "redirect:/eats";
     }
 
 //    @GetMapping("delete")

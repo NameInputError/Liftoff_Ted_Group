@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
 <head>
     <meta charset="UTF-8">
     <title>Track My Eats</title>
@@ -7,5 +8,24 @@
 <body>
 <p>My Track My Eats Home Page</p>
 <p>This is the eats.html template</p>
+
+<div class="container body-content">
+    <h1>My Restaurants</h1>
+    <ul th:each="restaurant : ${restaurants}">
+        <li>
+            <p th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</p>
+            <p th:text="${'Location: ' + restaurant.restaurantLocation}"></p>
+            <p th:text="${'Review: ' + restaurant.review}"></p>
+            <p th:text="${'Stars: ' + restaurant.stars}"></p>
+            <p th:text="${'Date: ' + restaurant.date}"></p>
+
+<!--            <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
+        </li>
+    </ul>
+
+</div>
+
+
 </body>
+
 </html>
