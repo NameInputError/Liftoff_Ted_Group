@@ -3,11 +3,11 @@ package org.launchcode.trackmyeats.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
-
 @Entity
 public class Restaurant extends AbstractEntity{
 
