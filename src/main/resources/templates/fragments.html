@@ -6,6 +6,7 @@
     <!-- Bootstrap stylesheets and script -->
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{/css/trackmyeats.css}" rel="stylesheet" />
+    <link th:href="@{/images}" rel="stylesheet" />
     <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
 
     <title th:text="'TrackMyEats' + ${title == null ? '' : ' :: ' + title}">TrackMyEats</title>
@@ -14,18 +15,31 @@
 <!--Line 17 needs to be renamed instead of calling it "page-header". -->
 
 <body>
+<!--this is for register, login and welcome-->
+<div th:fragment="intro-header" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a th:href="@{/}" class="navbar-brand">Track My Eats</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+
+                    </div>
+    </div>
+</div>
+
+<!--this is for add and eats-->
 <div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <a th:href="@{/}" class="navbar-brand">TrackMyEats</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a th:href="@{/eats/add}">Add </a></li>
-                            <li><a th:href="@{/eats}">My Eats</a></li>
-                            <li><a th:href="@{/logout}">Logout</a></li>
-                        </ul>
-                    </div>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/eats/add}">Add </a></li>
+                <li><a th:href="@{/eats}">My Eats</a></li>
+                <li><a th:href="@{/login}">Logout</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 </body>
