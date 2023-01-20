@@ -1,13 +1,10 @@
 package org.launchcode.trackmyeats.models;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+
 @Entity
 public class Restaurant extends AbstractEntity{
 
@@ -26,7 +23,10 @@ public class Restaurant extends AbstractEntity{
     private Restaurants type;
 
 
-    public Restaurant(){}
+    public Restaurant() {
+    }
+
+    public Restaurant(String restaurantName, Object rating){}
 
     public Restaurant(String restaurantName, String restaurantLocation,
                       ArrayList<String> categories, Float stars, String review, Restaurants type) {

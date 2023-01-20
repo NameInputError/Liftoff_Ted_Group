@@ -4,7 +4,6 @@ import jakarta.validation.Valid;
 import org.launchcode.trackmyeats.models.Restaurants;
 import org.launchcode.trackmyeats.models.Restaurant;
 import org.launchcode.trackmyeats.models.data.RestaurantRepository;
-import org.launchcode.trackmyeats.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +31,7 @@ public class RestaurantController {
     @GetMapping("add")
     public String displayAddRestaurantForm(Model model) {
         model.addAttribute("title", "Add a Restaurant");
-        model.addAttribute(new Restaurant());
+       // model.addAttribute(new Restaurant(restaurantName, RestaurantDetails.getRating()));
         model.addAttribute("types", Restaurants.values());
         return "add";
     }
