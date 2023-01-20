@@ -5,10 +5,10 @@
 
 
 
-<form th:action="@{/search}" method=get>
+<form th:action="@{/search}" method="post">
     <div class="form-group">
-        <label>
-            <input type="text" name="keyword" th:value="${keyword}"  placeholder="Find a Restaurant" size="50" >
+        <label> Search for a Restaurant
+            <input type="search" name="term" th:value="${term}"  placeholder="Find a Restaurant" size="50" >
         </label>
 <!--        <p class="error" th:errors="${restaurant.restaurantName}"></p>-->
     </div>

@@ -22,6 +22,8 @@ public class Restaurant extends AbstractEntity{
 
     private Restaurants type;
 
+    private String term;
+
 
     public Restaurant() {
     }
@@ -92,5 +94,13 @@ public class Restaurant extends AbstractEntity{
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public String getTerm() {
+        return term;
+    }
+
+    public void setTerm(String term) {
+        this.term = term;
     }
 }
