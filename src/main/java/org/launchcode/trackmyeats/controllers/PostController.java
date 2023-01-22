@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/search")
+@RequestMapping("api/search")
 public class PostController {
 
 //    @Value("${api.key}")
