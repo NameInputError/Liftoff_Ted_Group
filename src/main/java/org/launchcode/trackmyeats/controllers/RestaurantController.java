@@ -27,6 +27,15 @@ public class RestaurantController {
         return "eats";
     }
 
+    @GetMapping("search")
+    public String displaySearchFieldAndMap(Model model) {
+        model.addAttribute("title", "Where did you eat?");
+        model.addAttribute(new Restaurant());
+
+        return "search";
+    }
+
+
     @GetMapping("add")
     public String displayAddRestaurantForm(Model model) {
         model.addAttribute("title", "Add a Restaurant");
