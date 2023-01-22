@@ -11,6 +11,8 @@ import java.util.Date;
 @Entity
 public class Restaurant extends AbstractEntity{
 
+    private String q;
+
     private String restaurantName;
 
     private String restaurantLocation;

@@ -30,10 +30,18 @@ public class RestaurantController {
     @GetMapping("search")
     public String displaySearchFieldAndMap(Model model) {
         model.addAttribute("title", "Where did you eat?");
-        model.addAttribute(new Restaurant());
+
 
         return "search";
     }
+
+//    @PostMapping("search")
+//    public String displaySearchFieldAndMap(Model model) {
+//        model.addAttribute("title", "Where did you eat?");
+//
+//
+//        return "search";
+//    }
 
 
     @GetMapping("add")
