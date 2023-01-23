@@ -75,7 +75,7 @@ public class RestaurantController {
             model.addAttribute("title", "Invalid Restaurant ID: " + restaurantId);
         } else {
             Restaurant restaurant = result.get();
-            model.addAttribute("title", restaurant.getRestaurantName() + " Details");
+            //model.addAttribute("title", restaurant.getRestaurantName() + " Details");
             model.addAttribute("restaurant", restaurant);
         }
 
