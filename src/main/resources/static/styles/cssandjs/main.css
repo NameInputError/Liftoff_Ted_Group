@@ -12,3 +12,7 @@ strong {
 p {
     font-family: sans-serif;
 }
+
+#map {
+      height: 50%;
+      }
