@@ -6,8 +6,10 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-        <link rel="stylesheet" type="text/css" href="../../static/styles/cssandjs/main.css" />
-        <script type="module" src="../../static/js/cssandjs/maps.js"></script>
+<!--        <link rel="stylesheet" type="text/css" href="resources/static/styles.cssandjs/main.css" />-->
+<!--        <script type="module" src="static/js.cssandjs/maps.js"></script>-->
+<!--    <link rel="stylesheet" type="text/css" href="./main.css" />-->
+<!--    <script type="module" src="./index.js"></script>-->
     </head>
 <body>
 <p>this is populating</p>
@@ -21,19 +23,33 @@
 <!--        allowfullscreen>-->
 <!--</iframe>-->
 
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKrazimTor7rAvcFF1vXfJrhj1iXPcnMI&callback=initMap&v=weekly"
-        defer>
+<div>
+    <div id="map" style="width: 500px; height: 400px;"></div>
+</div>
+<script>
     let map;
-    function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-      center: {
-        lat: 38.6270
-        lng: -90.1994
-        },
-        zoom: 8
-      });
-    }
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
+window.initMap = initMap;
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKrazimTor7rAvcFF1vXfJrhj1iXPcnMI&callback=initMap"
+        defer>
+<!--    let map;-->
+<!--    function initMap() {-->
+<!--    map = new google.maps.Map(document.getElementById("map"), {-->
+<!--      center: {-->
+<!--        lat: 38.6270-->
+<!--        lng: -90.1994-->
+<!--        },-->
+<!--        zoom: 8-->
+<!--      });-->
+<!--    }-->
 </script>
 
 <!--
