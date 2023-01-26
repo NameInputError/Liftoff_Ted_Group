@@ -17,7 +17,7 @@ public class Restaurant extends AbstractEntity{
 
     private ArrayList<String> categories = new ArrayList<>();
 
-    private LocalDate date;
+    private LocalDate localDate;
 
     private Float stars;
 
@@ -86,11 +86,11 @@ public class Restaurant extends AbstractEntity{
         this.type = type;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
     }
 }

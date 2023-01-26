@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @Controller
@@ -42,7 +43,7 @@ public class RestaurantController {
             model.addAttribute("title", "Add a Restaurant");
             return "add";
         }
-
+        newRestaurant.setLocalDate(LocalDate.now());
         restaurantRepository.save(newRestaurant);
         return "redirect:/eats";
     }
