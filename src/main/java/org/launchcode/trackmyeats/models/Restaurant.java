@@ -3,6 +3,9 @@ package org.launchcode.trackmyeats.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -16,28 +19,30 @@ public class Restaurant extends AbstractEntity{
 
     private String restaurantLocation;
 
-//    private ArrayList<String> categories = new ArrayList<>();
+    private ArrayList<String> categories = new ArrayList<>();
 
-    private LocalDate date;
+    private LocalDate localDate;
 
+    //@Size(min=1, max=5)
     private Float stars;
 
-    @Size()
+    @Size(max = 250, message = "Description too long!")
+    @NotNull
     private String review;
 
-    private ArrayList<String> type;
+    private Restaurants type;
 
 
     public Restaurant(){}
 
     public Restaurant(String restaurantName, String restaurantLocation,
-                      ArrayList<String> type, Float stars, String review) {
+                      ArrayList<String> categories, Float stars, String review, Restaurants type) {
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
         this.type = type;
         this.stars = stars;
         this.review = review;
-
+        this.type = type;
     }
 
     public String getRestaurantName() {
@@ -56,13 +61,13 @@ public class Restaurant extends AbstractEntity{
         this.restaurantLocation = restaurantLocation;
     }
 
-//    public ArrayList<String> getCategories() {
-//        return categories;
-//    }
-//
-//    public void setCategories(ArrayList<String> categories) {
-//        this.categories = categories;
-//    }
+    public ArrayList<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<String> categories) {
+        this.categories = categories;
+    }
 
     public Float getStars() {
         return stars;
@@ -80,26 +85,19 @@ public class Restaurant extends AbstractEntity{
         this.review = review;
     }
 
-    public ArrayList<String> getType() {
+    public Restaurants getType() {
         return type;
     }
 
-    public void setType(ArrayList<String> type) {
+    public void setType(Restaurants type) {
         this.type = type;
     }
-//    public Restaurants getType() {
-//        return type;
-//    }
-//
-//    public void setType(Restaurants type) {
-//        this.type = type;
-//    }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
     }
 }

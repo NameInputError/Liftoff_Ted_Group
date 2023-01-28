@@ -1,7 +1,7 @@
 package org.launchcode.trackmyeats.controllers;
 
 import jakarta.validation.Valid;
-//import org.launchcode.trackmyeats.models.Restaurants;
+import org.launchcode.trackmyeats.models.Restaurants;
 import org.launchcode.trackmyeats.models.Restaurant;
 import org.launchcode.trackmyeats.models.data.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @Controller
@@ -31,7 +32,7 @@ public class RestaurantController {
     public String displayAddRestaurantForm(Model model) {
         model.addAttribute("title", "Add a Restaurant");
         model.addAttribute(new Restaurant());
-//        model.addAttribute("types", );
+        model.addAttribute("types", Restaurants.values());
         return "add";
     }
 
@@ -42,7 +43,7 @@ public class RestaurantController {
             model.addAttribute("title", "Add a Restaurant");
             return "add";
         }
-        model.addAttribute(String.valueOf(new Restaurant()), newRestaurant);
+        newRestaurant.setLocalDate(LocalDate.now());
         restaurantRepository.save(newRestaurant);
         return "redirect:/eats";
     }
