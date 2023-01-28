@@ -1,11 +1,17 @@
 body {
-    background-color: white;
+    background-color: #FDFCED;
 }
 
 h2 {
     text-align: center;
-    color: orchid;
+    color: #A020F0;
 }
+
+.navbar-header {
+text-color: #FDFCED;
+background-color: #77bb3f;
+}
+
 
 .glyphicon-star:before {
   content: "\e006";
@@ -13,3 +19,18 @@ h2 {
 .glyphicon-star-empty:before {
   content: "\e007";
 }
+
+off-white hex
+FDFCED
+
+smokey-black hex
+OF0609
+
+green
+77bb3f
+
+pansy purple
+792A47
+
+artichoke
+9B986F
