@@ -6,6 +6,7 @@
 <p>This is the add.html template.</p>
 
 <form method="post">
+    <header th:replace="fragments :: page-header"></header>
     <div class="form-group">
         <label>Name
             <input th:field="${restaurant.restaurantName}" class="form-control">
@@ -18,6 +19,7 @@
         </label>
         <p class="error" th:errors="${restaurant.review}"></p>
     </div>
+
     <div class="form-group">
         <label>Rating
             <input th:field="${restaurant.stars}" class="form-control">
