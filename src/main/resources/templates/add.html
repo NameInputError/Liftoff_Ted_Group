@@ -8,20 +8,23 @@
 <form method="post">
     <header th:replace="fragments :: page-header"></header>
     <div class="form-group">
-        <label>Name
+        <label>
+            <p>Restaurant Name</p>
             <input th:field="${restaurant.restaurantName}" class="form-control">
         </label>
         <p class="error" th:errors="${restaurant.restaurantName}"></p>
     </div>
     <div class="form-group">
-        <label>Review
+        <label>
+            <p>Please write a review</p>
             <input th:field="${restaurant.review}" class="form-control">
         </label>
         <p class="error" th:errors="${restaurant.review}"></p>
     </div>
 
     <div class="form-group">
-        <label>Rating
+        <label>
+            <p>Rate on a scale of 1-5</p>
             <input th:field="${restaurant.stars}" class="form-control">
         </label>
         <p class="error" th:errors="${restaurant.stars}"></p>
