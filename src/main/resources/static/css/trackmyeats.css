@@ -1,5 +1,6 @@
 body {
     background-color: #FDFCED;
+     font-size: 18px;
 }
 
 h2 {
@@ -11,6 +12,7 @@ h2 {
 text-color: #FDFCED;
 background-color: #77bb3f;
 }
+
 
 
 .glyphicon-star:before {
