@@ -10,23 +10,42 @@
 <p>My Track My Eats Home Page</p>
 <p>This is the eats.html template</p>
 
-<div class="container body-content">
-    <h1>My Restaurants</h1>
-    <ul th:each="restaurant : ${restaurants}">
-        <li>
-            <p th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</p>
-            <p th:text="${'Location: ' + restaurant.restaurantLocation}"></p>
-            <p th:text="${'Review: ' + restaurant.review}"></p>
-            <p th:text="${'Stars: ' + restaurant.stars}"></p>
-            <p th:text="${'Date: ' + restaurant.localDate}"></p>
+<!--<div class="container body-content">-->
+<!--    <h1>My Restaurants</h1>-->
+<!--    <ul th:each="restaurant : ${restaurants}">-->
+<!--        <li>-->
+<!--            <p th:text="${'Restaurant: ' + restaurant.restaurantName}">Restaurants</p>-->
+<!--            <p th:text="${'Location: ' + restaurant.restaurantLocation}"></p>-->
+<!--            <p th:text="${'Review: ' + restaurant.review}"></p>-->
+<!--            <p th:text="${'Stars: ' + restaurant.stars}"></p>-->
+<!--            <p th:text="${'Date: ' + restaurant.localDate}"></p>-->
 
-<!--            <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
-        </li>
-    </ul>
+<!--&lt;!&ndash;            <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>&ndash;&gt;-->
+<!--        </li>-->
+<!--    </ul>-->
 
-</div>
+<!--</div>-->
 
 
 </body>
 
 </html>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Location</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tr th:each="restaurant : ${restaurants}">
+        <td th:text="${restaurant.restaurantName}"></td>
+        <td th:text="${restaurant.restaurantLocation}"></td>
+        <td th:text="${restaurant.review}"></td>
+        <td th:text="${restaurant.stars}"></td>
+        <td th:text="${restaurant.localDate}"></td>
+    </tr>
+</table>
