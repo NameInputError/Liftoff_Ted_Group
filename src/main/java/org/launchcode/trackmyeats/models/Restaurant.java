@@ -3,10 +3,8 @@ package org.launchcode.trackmyeats.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -23,11 +21,13 @@ public class Restaurant extends AbstractEntity{
 
     private LocalDate localDate;
 
-    //@Size(min=1, max=5)
+    @Min(1)
+    @Max(5)
     private Float stars;
 
     @Size(max = 250, message = "Description too long!")
     @NotNull
+    @NotBlank(message = "Review is required!")
     private String review;
 
     private Restaurants type;

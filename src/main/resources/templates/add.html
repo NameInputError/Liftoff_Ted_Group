@@ -8,20 +8,41 @@
 <form method="post">
     <header th:replace="fragments :: page-header"></header>
     <div class="form-group">
-        <label>Name
+        <label>
+            <p>Restaurant Name</p>
             <input th:field="${restaurant.restaurantName}" class="form-control">
         </label>
         <p class="error" th:errors="${restaurant.restaurantName}"></p>
     </div>
-    <div class="form-group">
-        <label>Review
-            <input th:field="${restaurant.review}" class="form-control">
+<!--    <div class="form-group">-->
+<!--    <label for="freeform">Please write a review-->
+<!--    <br>-->
+<!--        <input th:field="${restaurant.review}" class="form-control">-->
+<!--    </label>-->
+<!--    <textarea id="freeform" name="freeform" rows="4" cols="50">-->
+<!--Enter text here...-->
+<!--</textarea>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--        <label>-->
+<!--            <p>Please write a review</p>-->
+<!--            <input th:field="${restaurant.review}" class="form-control">-->
+<!--        </label>-->
+<!--        <p class="error" th:errors="${restaurant.review}"></p>-->
+<!--    </div>-->
+
+    <div class="form-outline w-100">
+        <label>
+            <p>Please write a review</p>
         </label>
-        <p class="error" th:errors="${restaurant.review}"></p>
+        <textarea th:field="${restaurant.review}" class="form-control" id="freeform" name="freeform" rows="4" cols="50"
+                  style="background: #fff;"></textarea>
     </div>
 
     <div class="form-group">
-        <label>Rating
+        <label>
+            <p>Rate on a scale of 1-5</p>
             <input th:field="${restaurant.stars}" class="form-control">
         </label>
         <p class="error" th:errors="${restaurant.stars}"></p>
