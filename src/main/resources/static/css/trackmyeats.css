@@ -9,8 +9,10 @@ h2 {
 }
 
 .navbar-header {
+font-size: 30px;
 text-color: #FDFCED;
 background-color: #77bb3f;
+height: 64px;
 }
 
 
