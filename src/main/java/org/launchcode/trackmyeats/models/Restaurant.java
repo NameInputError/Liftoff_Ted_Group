@@ -25,7 +25,7 @@ public class Restaurant extends AbstractEntity{
     @Max(5)
     private Float stars;
 
-    @Size(max = 250, message = "Description too long!")
+    @Size(max = 100, message = "Review is too long! Only 100 characters allowed.")
     @NotNull
     @NotBlank(message = "Review is required!")
     private String review;
