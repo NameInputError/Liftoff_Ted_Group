@@ -23,12 +23,21 @@
 <!--Enter text here...-->
 <!--</textarea>-->
 <!--    </div>-->
-    <div class="form-group">
+
+<!--    <div class="form-group">-->
+<!--        <label>-->
+<!--            <p>Please write a review</p>-->
+<!--            <input th:field="${restaurant.review}" class="form-control">-->
+<!--        </label>-->
+<!--        <p class="error" th:errors="${restaurant.review}"></p>-->
+<!--    </div>-->
+
+    <div class="form-outline w-100">
         <label>
             <p>Please write a review</p>
-            <input th:field="${restaurant.review}" class="form-control">
         </label>
-        <p class="error" th:errors="${restaurant.review}"></p>
+        <textarea th:field="${restaurant.review}" class="form-control" id="freeform" name="freeform" rows="4" cols="50"
+                  style="background: #fff;"></textarea>
     </div>
 
     <div class="form-group">
