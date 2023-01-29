@@ -1,5 +1,6 @@
 body {
     background-color: #FDFCED;
+     font-size: 18px;
 }
 
 h2 {
@@ -8,9 +9,12 @@ h2 {
 }
 
 .navbar-header {
+font-size: 30px;
 text-color: #FDFCED;
 background-color: #77bb3f;
+height: 64px;
 }
+
 
 
 .glyphicon-star:before {
