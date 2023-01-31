@@ -13,6 +13,7 @@ import java.util.Date;
 @Entity
 public class Restaurant extends AbstractEntity{
 
+    @NotBlank(message = "Restaurant name is required!")
     private String restaurantName;
 
     private String restaurantLocation;
