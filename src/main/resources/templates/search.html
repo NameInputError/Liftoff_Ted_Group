@@ -1,10 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Search Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+    <style>
+#map {
+  height: 400px;
+  width: 600px;
+}
+
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.controls {
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  height: 29px;
+  margin-left: 17px;
+  margin-top: 10px;
+  outline: none;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+.controls:focus {
+  border-color: #4d90fe;
+}
+
+.title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+#resultsTable {
+  border-collapse: collapse;
+  width: 240px;
+}
+
+.iw_table_row {
+  height: 18px;
+}
+
+.iw_attribute_name {
+  font-weight: bold;
+  text-align: right;
+}
+    </style>
 </head>
 <body>
+
+<p>Step 1: Where did you eat?</p>
+<div style="display: none">
+    <input
+            id="pac-input"
+            class="controls"
+            type="text"
+            placeholder="Enter a location"
+    />
+</div>
+<div id="map"></div>
+<div id="infowindow-content">
+    <span id="place-name" class="title"></span><br />
+    <strong>Place ID:</strong> <span id="place-id"></span><br />
+    <span id="place-address"></span>
+</div>
+
+<script>
+function initMap() {
+const map = new google.maps.Map(document.getElementById("map"), {
+center: { lat: 38.627, lng: -90.199 },
+zoom: 10,
+});
+const input = document.getElementById("pac-input");
+// Specify just the place data fields that you need.
+const autocomplete = new google.maps.places.Autocomplete(input, {
+type: ["restaurant"],
+fields: ["place_id", "geometry", "formatted_address", "name"],
+});
+
+autocomplete.bindTo("bounds", map);
+map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+const infowindow = new google.maps.InfoWindow();
+const infowindowContent = document.getElementById("infowindow-content");
+
+infowindow.setContent(infowindowContent);
+
+const marker = new google.maps.Marker({ map: map });
+
+marker.addListener("click", () => {
+infowindow.open(map, marker);
+});
+autocomplete.addListener("place_changed", () => {
+infowindow.close();
+
+document.getElementById("nextButton").disabled = false;
+
+const place = autocomplete.getPlace();
+
+if (!place.geometry || !place.geometry.location) {
+return;
+}
+
+if (place.geometry.viewport) {
+map.fitBounds(place.geometry.viewport);
+} else {
+map.setCenter(place.geometry.location);
+map.setZoom(17);
+}
+
+// Set the position of the marker using the place ID and location.
+// @ts-ignore This should be in @typings/googlemaps.
+marker.setPlace({
+placeId: place.place_id,
+location: place.geometry.location,
+});
+marker.setVisible(true);
+infowindowContent.children.namedItem("place-name").textContent = place.name;
+infowindowContent.children.namedItem("place-id").textContent =
+place.place_id;
+infowindowContent.children.namedItem("place-address").textContent =
+place.formatted_address;
+infowindow.open(map, marker);
+});
+}
+
+
+
+window.initMap = initMap;
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKrazimTor7rAvcFF1vXfJrhj1iXPcnMI&callback=initMap&libraries=places&v=weekly"
+        defer
+></script>
+
+<!--
+  The `defer` attribute causes the callback to execute after the full HTML
+  document has been parsed. For non-blocking uses, avoiding race conditions,
+  and consistent behavior across browsers, consider loading using Promises
+  with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+  -->
+
+<!--need script here for going to next page-->
+
+
+<button id="nextButton" disabled onclick="window.location.href = 'add.html';">Next</button>
 
 </body>
 </html>

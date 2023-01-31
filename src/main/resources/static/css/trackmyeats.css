@@ -15,6 +15,9 @@ background-color: #77bb3f;
 height: 64px;
 }
 
+.header-right {
+  float: right;
+}
 
 
 .glyphicon-star:before {

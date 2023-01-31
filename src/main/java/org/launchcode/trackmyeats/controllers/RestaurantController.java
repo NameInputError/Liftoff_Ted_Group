@@ -48,6 +48,14 @@ public class RestaurantController {
         return "redirect:/eats";
     }
 
+    @GetMapping("search")
+    public String displaySearchFieldAndMap(Model model) {
+        model.addAttribute("title", "Where did you eat?");
+
+        return "search";
+    }
+
+
 //    @GetMapping("delete")
 //    public String displayDeleteEventForm(Model model) {
 //        model.addAttribute("title", "Delete Events");

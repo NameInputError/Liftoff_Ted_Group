@@ -30,22 +30,27 @@
 
 <!--this is for add and eats-->
 <div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a th:href="@{/}" class="navbar-brand">TrackMyEats</a>
+    <!--    <div class="container-fluid">-->
+    <div class="navbar-header">
+        <a th:href="@{/}" class="navbar-brand">TrackMyEats</a>
+
+        <div class="header-right">
             <a th:href="@{/eats/add}">Add</a>
             <a th:href="@{/eats}">My Eats</a>
             <a th:href="@{/login}">Logout</a>
-
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-<!--                <li><a th:href="@{/eats/add}">Add </a></li>-->
-<!--                <li><a th:href="@{/eats}">My Eats</a></li>-->
-<!--                <li><a th:href="@{/login}">Logout</a></li>-->
-            </ul>
         </div>
     </div>
+
 </div>
+<!--        <div class="navbar-collapse collapse">-->
+<!--            <ul class="nav navbar-nav">-->
+<!--&lt;!&ndash;                <li><a th:href="@{/eats/add}">Add </a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a th:href="@{/eats}">My Eats</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a th:href="@{/login}">Logout</a></li>&ndash;&gt;-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 </body>
 
 </html>
