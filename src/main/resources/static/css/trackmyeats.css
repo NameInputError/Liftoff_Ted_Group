@@ -27,6 +27,7 @@ height: 64px;
   content: "\e007";
 }
 
+
 tr:nth-child(odd) {
     background-color: #e4e4e4;
 }
