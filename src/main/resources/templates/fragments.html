@@ -18,9 +18,17 @@
 <!--this is for register, login and welcome-->
 <div th:fragment="intro-header" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
+<!--        <div id="header"><link th:href="@{/images/track_my_eats-1__1_resize 880.png}></div>-->
+<!--&lt;!&ndash;        th:href="@{/}" &ndash;&gt; <link th:href="@{/track_my_eats-1__1_resize 880.png}">-->
         <div class="navbar-header">
-            <a th:href="@{/}" class="navbar-brand">Track My Eats</a>
-            <a th:href="@{/images}"></a>
+            <a class="navbar-brand">TrackMyEats</a>
+            <div class="header-inner">
+                <div class="logo-container">
+                    <a href="#">
+                        <img src="/images/track_my_eats-1__1_resize 880.png" class="logo-header" alt="MyLogo">
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="navbar-collapse collapse">
 
@@ -40,17 +48,6 @@
             <a th:href="@{/login}">Logout</a>
         </div>
     </div>
-
 </div>
-<!--        <div class="navbar-collapse collapse">-->
-<!--            <ul class="nav navbar-nav">-->
-<!--&lt;!&ndash;                <li><a th:href="@{/eats/add}">Add </a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;                <li><a th:href="@{/eats}">My Eats</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;                <li><a th:href="@{/login}">Logout</a></li>&ndash;&gt;-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 </body>
-
 </html>
