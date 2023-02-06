@@ -122,6 +122,10 @@ const place = autocomplete.getPlace();
 
 document.getElementById("nextButton").disabled = false;
 document.getElementById("searchName").innerText = `${place.name}`;
+    let placeName = place.name;
+    let placeId = place.place_id;
+    localStorage.setItem("place-id", placeId);
+    localStorage.setItem("place-name", placeName);
 
 
 
@@ -176,19 +180,37 @@ window.initMap = initMap;
     <span id="searchName">""</span>
 </div>
 
-<form action="add.html">
-    <button id="nextButton" type = "button" disabled>Next</button>
+<!--<form action="eats/add.html">-->
+<!--    <button id="nextButton" type = "button" disabled>Next</button>-->
 
-</form>
-<!--<button id="nextButton" disabled onclick="window.location.href = 'add.html';">Next</button>-->
+<!--</form>-->
+<button id="nextButton" disabled onclick = "add";>Next</button>
 
+<!--<script>-->
+<!--    let nextButton = document.getElementById ('nextButton');-->
+<!--    let placeName = document.getElementById('searchName');-->
+<!--    let placeId = document.getElementById('place-id');-->
+
+<!--    nextButton.addEventListener('click', function (e) {-->
+<!--    e.preventDefault();-->
+<!--    let placeIdValue = placeId.value;-->
+<!--    let placeNameValue = placeName.value;-->
+
+<!--    localStorage.setItem('place-id', placeNameValue);-->
+<!--    localStorage.setItem('place-name', placeIdValue);-->
+<!--    })-->
+<!--</script>-->
 <script>
     let nextButton = document.getElementById ('nextButton');
+
+
     nextButton.addEventListener('click', function () {
-    placeID = document.getElementById('place-id');
-    window.location.href
-    }
+
+    window.location.href = 'add';
+
+    })
 </script>
+
 
 
 </body>
