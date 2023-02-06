@@ -13,6 +13,7 @@ import java.util.Date;
 @Entity
 public class Restaurant extends AbstractEntity{
 
+    private String placeID;
     @NotBlank(message = "Restaurant name is required!")
     private String restaurantName;
 
@@ -100,5 +101,13 @@ public class Restaurant extends AbstractEntity{
 
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
+    }
+
+    public String getPlaceID() {
+        return placeID;
+    }
+
+    public void setPlaceID(String placeID) {
+        this.placeID = placeID;
     }
 }

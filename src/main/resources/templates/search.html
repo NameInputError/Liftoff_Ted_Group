@@ -118,9 +118,12 @@ infowindow.open(map, marker);
 autocomplete.addListener("place_changed", () => {
 infowindow.close();
 
-document.getElementById("nextButton").disabled = false;
-
 const place = autocomplete.getPlace();
+
+document.getElementById("nextButton").disabled = false;
+document.getElementById("searchName").innerText = `${place.name}`;
+
+
 
 if (!place.geometry || !place.geometry.location) {
 return;
@@ -168,7 +171,25 @@ window.initMap = initMap;
 <!--need script here for going to next page-->
 
 
-<button id="nextButton" disabled onclick="window.location.href = 'add.html';">Next</button>
+<div id="selectionAppear">
+    Selected Restaurant:
+    <span id="searchName">""</span>
+</div>
+
+<form action="add.html">
+    <button id="nextButton" type = "button" disabled>Next</button>
+
+</form>
+<!--<button id="nextButton" disabled onclick="window.location.href = 'add.html';">Next</button>-->
+
+<script>
+    let nextButton = document.getElementById ('nextButton');
+    nextButton.addEventListener('click', function () {
+    placeID = document.getElementById('place-id');
+    window.location.href
+    }
+</script>
+
 
 </body>
 </html>
