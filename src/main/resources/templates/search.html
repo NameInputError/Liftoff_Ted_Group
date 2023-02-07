@@ -118,9 +118,16 @@ infowindow.open(map, marker);
 autocomplete.addListener("place_changed", () => {
 infowindow.close();
 
-document.getElementById("nextButton").disabled = false;
-
 const place = autocomplete.getPlace();
+
+document.getElementById("nextButton").disabled = false;
+document.getElementById("searchName").innerText = `${place.name}`;
+    let placeName = place.name;
+    let placeId = place.place_id;
+    localStorage.setItem("place-id", placeId);
+    localStorage.setItem("place-name", placeName);
+
+
 
 if (!place.geometry || !place.geometry.location) {
 return;
@@ -168,7 +175,43 @@ window.initMap = initMap;
 <!--need script here for going to next page-->
 
 
-<button id="nextButton" disabled onclick="window.location.href = 'add.html';">Next</button>
+<div id="selectionAppear">
+    Selected Restaurant:
+    <span id="searchName">""</span>
+</div>
+
+<!--<form action="eats/add.html">-->
+<!--    <button id="nextButton" type = "button" disabled>Next</button>-->
+
+<!--</form>-->
+<button id="nextButton" disabled onclick = "add";>Next</button>
+
+<!--<script>-->
+<!--    let nextButton = document.getElementById ('nextButton');-->
+<!--    let placeName = document.getElementById('searchName');-->
+<!--    let placeId = document.getElementById('place-id');-->
+
+<!--    nextButton.addEventListener('click', function (e) {-->
+<!--    e.preventDefault();-->
+<!--    let placeIdValue = placeId.value;-->
+<!--    let placeNameValue = placeName.value;-->
+
+<!--    localStorage.setItem('place-id', placeNameValue);-->
+<!--    localStorage.setItem('place-name', placeIdValue);-->
+<!--    })-->
+<!--</script>-->
+<script>
+    let nextButton = document.getElementById ('nextButton');
+
+
+    nextButton.addEventListener('click', function () {
+
+    window.location.href = 'add';
+
+    })
+</script>
+
+
 
 </body>
 </html>
