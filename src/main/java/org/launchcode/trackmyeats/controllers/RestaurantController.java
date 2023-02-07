@@ -39,12 +39,13 @@ public class RestaurantController {
 
     @PostMapping("add")
     public String processAddRestaurantForm(@ModelAttribute @Valid Restaurant newRestaurant,
-                                         Errors errors, Model model) {
+                                         Errors errors, Model model, @RequestParam String placeId) {
         if(errors.hasErrors()) {
             model.addAttribute("title", "Add a Restaurant");
             return "add";
         }
         newRestaurant.setLocalDate(LocalDate.now());
+        newRestaurant.setPlaceID(placeId);
         restaurantRepository.save(newRestaurant);
         return "redirect:/eats";
     }

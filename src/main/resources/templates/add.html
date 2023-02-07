@@ -83,7 +83,13 @@
 <!--    <strong>Place ID:</strong> <span id="place-id"></span><br />-->
 <!--    <span id="place-address"></span>-->
 <!--</div>-->
+<!--<script>-->
+<!--     const placeId = localStorage.getItem('place-id');-->
+<!--     const placeName = localStorage.getItem('place-name');-->
 
+<!--    document.getElementById('place-name').innerHTML = placeName;-->
+<!--    document.getElementById('place-id').innerHTML = placeId;-->
+<!--</script>-->
 
 <form method="post">
 <!--    <header th:replace="fragments :: page-header"></header>-->
@@ -121,11 +127,22 @@
     </div>
 </form>
 <script>
-     const placeId = localStorage.getItem('place-id');
-     const placeName = localStorage.getItem('place-name');
 
-    document.getElementById('place-name').innerHTML = placeName;
-    document.getElementById('place-id').innerHTML = placeId;
+    let placeId = localStorage.getItem('place-id');
+     let placeName = localStorage.getItem('place-name');
+    const test = document.querySelector('place-id');
+  window.addEventListener("load", function() {
+
+
+
+
+      document.getElementById('place-name').innerText = placeName;
+    document.getElementById('place-id').innerText = placeId;
+console.log("test");
+    });
+
+
+
 </script>
 
 <!--<script>-->
