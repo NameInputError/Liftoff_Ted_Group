@@ -1,6 +1,6 @@
 # Track My Eats
 
-A Spring Boot application to track users restaurant experiences.
+A Spring Boot application to track users' restaurant experiences.
 
 ## Planned Features
 

@@ -19,6 +19,7 @@ height: 64px;
   float: right;
 }
 
+
 a {
     color: #A020F0;
     text-decoration: none;
@@ -48,6 +49,12 @@ margin-bottom:60px;
 .logo_header {
 width:200px;
 height:auto;
+
+}
+
+
+tr:nth-child(odd) {
+    background-color: #e4e4e4;
 }
 
 off-white hex
