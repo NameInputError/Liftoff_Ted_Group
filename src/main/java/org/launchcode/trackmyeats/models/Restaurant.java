@@ -13,7 +13,7 @@ import java.util.Date;
 @Entity
 public class Restaurant extends AbstractEntity{
 
-    private String placeID;
+    private String placeId;
     @NotBlank(message = "Restaurant name is required!")
     private String restaurantName;
 
@@ -38,13 +38,14 @@ public class Restaurant extends AbstractEntity{
     public Restaurant(){}
 
     public Restaurant(String restaurantName, String restaurantLocation,
-                      ArrayList<String> categories, Float stars, String review, Restaurants type) {
+                      ArrayList<String> categories, Float stars, String review, Restaurants type, String placeId) {
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
-        this.type = type;
+        this.placeId = placeId;
         this.stars = stars;
         this.review = review;
         this.type = type;
+
     }
 
     public String getRestaurantName() {
@@ -103,11 +104,11 @@ public class Restaurant extends AbstractEntity{
         this.localDate = localDate;
     }
 
-    public String getPlaceID() {
-        return placeID;
+    public String getPlaceId() {
+        return placeId;
     }
 
-    public void setPlaceID(String placeID) {
-        this.placeID = placeID;
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
     }
 }

@@ -36,6 +36,7 @@ public class RestaurantController {
         return "add";
     }
 
+
     @PostMapping("add")
     public String processAddRestaurantForm(@ModelAttribute @Valid Restaurant newRestaurant,
                                          Errors errors, Model model) {

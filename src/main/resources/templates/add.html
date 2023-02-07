@@ -121,11 +121,11 @@
     </div>
 </form>
 <script>
-    const placeId = localStorage.getItem('place-id');
-    const placeName = localStorage.getItem('place-name');
+     const placeId = localStorage.getItem('place-id');
+     const placeName = localStorage.getItem('place-name');
 
-    document.getElementById('place-name').textContent = placeName;
-    document.getElementById('place-id').textContent = placeId;
+    document.getElementById('place-name').innerHTML = placeName;
+    document.getElementById('place-id').innerHTML = placeId;
 </script>
 
 <!--<script>-->
