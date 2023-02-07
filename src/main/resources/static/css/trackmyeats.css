@@ -19,12 +19,37 @@ height: 64px;
   float: right;
 }
 
-.glyphicon-star:before {
-  content: "\e006";
+
+a {
+    color: #A020F0;
+    text-decoration: none;
+    text-transform: uppercase;
+
 }
 
-.glyphicon-star-empty:before {
-  content: "\e007";
+.logo {
+    float: left;
+    background-color;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px 30 px;
+    display: inline-block;
+    font-family:
+}
+
+.logo-container {
+width: 200px;
+height:auto;
+display: block;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:60px;
+}
+
+.logo_header {
+width:200px;
+height:auto;
+
 }
 
 
