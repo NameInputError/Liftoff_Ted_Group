@@ -17,7 +17,7 @@ import java.util.Date;
 public class Restaurant extends AbstractEntity{
 
     @JsonProperty("place-id")
-    String placeId;
+    String placeID;
     @NotBlank(message = "Restaurant name is required!")
     private String restaurantName;
 
@@ -41,14 +41,21 @@ public class Restaurant extends AbstractEntity{
 
     public Restaurant(){}
 
-    public Restaurant(String restaurantName, String restaurantLocation,
-                      ArrayList<String> categories, Float stars, String review, Restaurants type, String placeId) {
-        this.restaurantName = restaurantName;
-        this.restaurantLocation = restaurantLocation;
-        this.placeId = placeId;
+
+//    public Restaurant(String restaurantName, String restaurantLocation,
+//                      ArrayList<String> categories, Float stars, String review, Restaurants type, String placeId) {
+//        this.restaurantName = restaurantName;
+//        this.restaurantLocation = restaurantLocation;
+//        this.placeID = placeID;
+//        this.stars = stars;
+//        this.review = review;
+//        this.type = type;
+//
+//    }
+    public Restaurant(Float stars, String review, String placeID) {
+        this.placeID = placeID;
         this.stars = stars;
         this.review = review;
-        this.type = type;
 
     }
 
@@ -108,11 +115,11 @@ public class Restaurant extends AbstractEntity{
         this.localDate = localDate;
     }
 
-    public String getPlaceId() {
-        return placeId;
+    public String getPlaceID() {
+        return placeID;
     }
 
-    public void setPlaceId(String placeId) {
-        this.placeId = placeId;
+    public void setPlaceID(String placeID) {
+        this.placeID = placeID;
     }
 }

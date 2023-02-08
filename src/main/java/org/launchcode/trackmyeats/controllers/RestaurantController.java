@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import static java.awt.SystemColor.window;
+
 @Controller
 @RequestMapping("eats")
 public class RestaurantController {
@@ -39,13 +41,15 @@ public class RestaurantController {
 
     @PostMapping("add")
     public String processAddRestaurantForm(@ModelAttribute @Valid Restaurant newRestaurant,
-                                         Errors errors, Model model, @RequestParam String placeId) {
+                                         Errors errors, Model model, @RequestParam(value = "place-id", required = false) String placeId) {
         if(errors.hasErrors()) {
             model.addAttribute("title", "Add a Restaurant");
             return "add";
         }
         newRestaurant.setLocalDate(LocalDate.now());
-        newRestaurant.setPlaceId(placeId);
+//        placeId = storage.getItem('place-id');
+//        newRestaurant.getPlaceID();
+        newRestaurant.setPlaceID(placeId);
         restaurantRepository.save(newRestaurant);
         return "redirect:/eats";
     }

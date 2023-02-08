@@ -90,7 +90,7 @@
 <!--    document.getElementById('place-name').innerHTML = placeName;-->
 <!--    document.getElementById('place-id').innerHTML = placeId;-->
 <!--</script>-->
-
+<p> Place ID: <span id="place-id"></span> </p>
 <form method="post">
 <!--    <header th:replace="fragments :: page-header"></header>-->
 <!--    <div class="form-group">-->
@@ -128,18 +128,18 @@
 </form>
 <script>
 
-    let placeId = localStorage.getItem('place-id');
-     let placeName = localStorage.getItem('place-name');
-    const test = document.querySelector('place-id');
-  window.addEventListener("load", function() {
+    const placeId = localStorage.getItem('place-id');
+     const placeName = localStorage.getItem('place-name');
+<!--  window.addEventListener("load", function() {-->
 
 
 
 
       document.getElementById('place-name').textContent = placeName;
     document.getElementById('place-id').textContent = placeId;
-console.log("test");
-    });
+
+<!--console.log("test");-->
+<!--    });-->
 
 
 
