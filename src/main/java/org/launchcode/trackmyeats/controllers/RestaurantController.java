@@ -45,7 +45,7 @@ public class RestaurantController {
             return "add";
         }
         newRestaurant.setLocalDate(LocalDate.now());
-        newRestaurant.setPlaceID(placeId);
+        newRestaurant.setPlaceId(placeId);
         restaurantRepository.save(newRestaurant);
         return "redirect:/eats";
     }

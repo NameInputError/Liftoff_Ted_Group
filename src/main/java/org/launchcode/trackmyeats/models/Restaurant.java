@@ -1,5 +1,7 @@
 package org.launchcode.trackmyeats.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -11,9 +13,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Restaurant extends AbstractEntity{
 
-    private String placeID;
+    @JsonProperty("place-id")
+    String placeId;
     @NotBlank(message = "Restaurant name is required!")
     private String restaurantName;
 
@@ -41,7 +45,7 @@ public class Restaurant extends AbstractEntity{
                       ArrayList<String> categories, Float stars, String review, Restaurants type, String placeId) {
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
-        this.placeID = placeID;
+        this.placeId = placeId;
         this.stars = stars;
         this.review = review;
         this.type = type;
@@ -104,11 +108,11 @@ public class Restaurant extends AbstractEntity{
         this.localDate = localDate;
     }
 
-    public String getPlaceID() {
-        return placeID;
+    public String getPlaceId() {
+        return placeId;
     }
 
-    public void setPlaceID(String placeID) {
-        this.placeID = placeID;
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
     }
 }
