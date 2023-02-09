@@ -37,13 +37,18 @@ a {
     font-family:
 }
 
-.logo-container {
-width: 200px;
+/*.logo-container {
+width: auto;
 height:auto;
 display: block;
 margin-left:auto;
-margin-right:auto;
+margin-right:60px;
 margin-bottom:60px;
+}*/
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo_header {
